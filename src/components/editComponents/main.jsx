@@ -5,7 +5,10 @@ export default function EditCV({generateEventHandler, currentResume, updateResum
     return (
         <>
         <button onClick={generateEventHandler}>Generate</button>
-        <PersonalInfo resume={currentResume} setResume={updateResume}/>
+        <form>
+            <PersonalInfo resume={currentResume} setResume={updateResume}/>
+
+        </form>
         </>
     )
 }

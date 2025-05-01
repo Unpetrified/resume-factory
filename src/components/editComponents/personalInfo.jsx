@@ -2,18 +2,20 @@ import Input from "./form elements";
 
 export default function PersonalInfo({resume, setResume}) {
     
-    function updateName(e) {
+    function update(e, element) {
         const newResume = {...resume};
-        newResume["Personal"]["name"] = e.target.value;
+        newResume["Personal"][element] = e.target.value;
         setResume(newResume)
     }
 
     return (
-        <>
-        <h2>Personal Information</h2>
-        <form>
-            <Input label="Name" id="name" value={resume["Personal"]["name"]} onChange={updateName}/>
-        </form>
-        </>
+        <fieldset>
+            <legend>Personal Information*</legend>
+            <Input label="Name" id="name" value={resume["Personal"]["name"]} handleChange={(e) => update(e, "name")}/>
+            <Input label="Email" id="email" value={resume["Personal"]["email"]} handleChange={(e) => update(e, "email")} type="email"/>
+            <Input label="Address" id="addr" value={resume["Personal"]["address"]} handleChange={(e) => update(e, "address")}/>
+            <Input label="Phone" id="phone" value={resume["Personal"]["telephone"]} handleChange={(e) => update(e, "telephone")} type="number"/>
+            <Input label="Role" id="role" value={resume["Personal"]["role"]} handleChange={(e) => update(e, "role")}/>
+        </fieldset>
     )
 }
