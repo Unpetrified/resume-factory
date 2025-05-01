@@ -15,10 +15,19 @@ export default function Education({resume, setResume}) {
                 "start":"", 
                 "isCurrent":true, 
                 "end":today,
-                 "key":crypto.randomUUID()
+                "key":crypto.randomUUID()
             };
 
         newResume["Education"].push(newSchool);
+        setResume(newResume);
+    }
+
+    function removeSchool(e, index) {
+        e.preventDefault();
+        
+        const newResume = {...resume};
+        newResume["Education"].splice(index, 1);
+
         setResume(newResume);
     }
 
@@ -29,18 +38,20 @@ export default function Education({resume, setResume}) {
 
         setResume(newResume)
     }
+
     return (
         <fieldset>
-            <legend>Education</legend>
+            <legend>Education*</legend>
             {resume["Education"].map((school, index) => {
 
-            return <React.Fragment key={school["key"]}>
+            return <section key={school["key"]}>
+                <button onClick={(e) => removeSchool(e, index)}>Delete School</button>
                     <Input label="School Name" id={index+"name"} value={school["name"]} handleChange={(e) => update(e, "name", index)}/>
                     <Input label="Degree Obtained" id={index+"deg"} value={school["degree"]} handleChange={(e) => update(e, "degree", index)}/>
                     <Input label="Start Date" id={index+"start"} value={school["start"]} handleChange={(e) => update(e, "start", index)} type="date"/>
                     <Checkbox label="I currently study here" id={index+"status"} value={school["isCurrent"]} type="checkbox" handleChange={(e) => update(e, "isCurrent", index)}/>
                     {school["isCurrent"] ? "" : <Input label="End Date" id={index+"end"} value={school["end"]} handleChange={(e) => update(e, "end", index)} type="date"/>}
-                </React.Fragment>
+                </section>
             })}            
             <button onClick={addSchool}>Add School</button>
         </fieldset>
