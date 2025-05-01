@@ -7,3 +7,13 @@ export default function Input({label, id, value, handleChange, type="text", clas
         </>
     )
 }
+
+export function Checkbox({label, id, value, handleChange, type="checkbox", class_name=""}) {
+
+    return (
+        <>
+        <input type={type} className={class_name} id={id} checked={value}  onChange={handleChange}/>
+        <label htmlFor={id}>{label}: </label>
+        </>
+    )
+}
