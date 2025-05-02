@@ -21,7 +21,7 @@ export default function App() {
 
     return (
         <>
-        {isEditing === 0 ? <EditCV generateEventHandler={handleGenerateCvBtnClick} currentResume={resume} updateResume={setResume}/> : <Generate editEventHandler={handleEditCvBtnClick} currentResume={resume} updateResume={setResume}/>}
+        {isEditing === 0 ? <EditCV generateEventHandler={handleGenerateCvBtnClick} currentResume={resume} updateResume={setResume}/> : <Generate editEventHandler={handleEditCvBtnClick} currentResume={resume} />}
         </>
     )
 }

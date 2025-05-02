@@ -7,14 +7,12 @@ export default function Education({resume, setResume}) {
         e.preventDefault()
         
         const newResume = {...resume},
-            today = new Date().toISOString().split("T")[0],
-
             newSchool = {
                 "name":"", 
                 "degree":"", 
                 "start":"", 
                 "isCurrent":true, 
-                "end":today,
+                "end":"Present",
                 "key":crypto.randomUUID()
             };
 
@@ -33,7 +31,10 @@ export default function Education({resume, setResume}) {
 
     function update(e, element, index) {
         const newResume = {...resume};
-        if(element === "isCurrent") newResume["Education"][index][element] = e.target.checked; 
+        if(element === "isCurrent") {
+            newResume["Education"][index][element] = e.target.checked; 
+            element ? newResume["Education"][index]["end"] = "Present" : "";
+        }
         else newResume["Education"][index][element] = e.target.value;
 
         setResume(newResume)

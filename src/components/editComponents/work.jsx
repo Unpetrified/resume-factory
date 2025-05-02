@@ -34,7 +34,10 @@ export default function Work({resume, setResume}) {
 
     function update(e, element, index, r_index=0) {
         const newResume = {...resume};
-        if(element === "isCurrent") newResume["Work"][index][element] = e.target.checked;
+        if(element === "isCurrent") {
+            newResume["Work"][index][element] = e.target.checked; 
+            element ? newResume["Work"][index]["end"] = "Present" : "";
+        }
         else if(element === "experience") newResume["Work"][index]["experience"][r_index]["value"] = e.target.value;
         else newResume["Work"][index][element] = e.target.value;
 
