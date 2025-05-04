@@ -1,3 +1,9 @@
+import emailIcon from '../../assets/email-outline.svg';
+import mapIcon from '../../assets/map-marker.svg';
+import phoneIcon from '../../assets/phone.svg';
+import jobIcon from '../../assets/briefcase-variant-outline.svg';
+import "../../style/generateCv.css"
+
 export default function Generate({editEventHandler, currentResume}) {
     return (
         <main>
@@ -5,10 +11,10 @@ export default function Generate({editEventHandler, currentResume}) {
                 <h2>{currentResume["Personal"]["name"]}</h2>
                 <hr className="name-hr"/>
                 <section className="contact">
-                    <div><span>emailIcon</span><span>{currentResume["Personal"]["email"]}</span></div>
-                    <div><span>addressIcon</span><span>{currentResume["Personal"]["address"]}</span></div>
-                    <div><span>phoneIcon</span><span>{currentResume["Personal"]["telephone"]}</span></div>
-                    <div><span>roleIcon</span><span>{currentResume["Personal"]["role"]}</span></div>
+                    <div><img src={emailIcon} className='contact-icon'/><span>{currentResume["Personal"]["email"]}</span></div>
+                    <div><img src={mapIcon} className='contact-icon'/><span>{currentResume["Personal"]["address"]}</span></div>
+                    <div><img src={phoneIcon} className='contact-icon'/><span>{currentResume["Personal"]["telephone"]}</span></div>
+                    <div><img src={jobIcon} className='contact-icon'/><span>{currentResume["Personal"]["role"]}</span></div>
                 </section>
             </section>
             <section className="education">

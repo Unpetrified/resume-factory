@@ -1,0 +1,177 @@
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 30px 60px;
+    margin: 40px 0;
+    border-radius: 10px;
+}
+
+fieldset,
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+    border: none;
+    width: 80%;
+}
+
+legend {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    height: 20px;
+}
+
+.school,
+.work {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.delete-btn {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: -10px;
+    top: -20px;
+    transition: scale 200ms ease-in-out;
+    padding: 2px;
+}  
+
+.delete-btn:hover {
+    scale: 1.2;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.checkbox {
+    width: fit-content;
+}
+
+ul {
+    width: 100%;
+    padding: 0;
+}
+
+li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: calc(100% - 40px);
+}
+
+li .delete-btn {
+    top: 20px;
+}
+
+button,
+.generate {
+    background-color: rgb(248, 79, 0);
+    color: white;
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: large;
+    border: none;
+    border-radius: 50px;
+}
+
+.responsibility {
+    font-size: medium;
+    font-weight: 400;
+    padding: 5px 15px;
+}
+
+.generate {
+    padding: 15px 50px;
+    width: fit-content;
+    height: fit-content;
+  
+    animation-name: generatePulse;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;  /* <-- pick whichever makes sense */
+  }
+  
+
+@keyframes generatePulse {
+    0% {
+        box-shadow: 0px 0px 5px rgba(248, 79, 0, 0.6);
+    }
+
+    50% {
+        box-shadow: 0px 0px 10px rgba(248, 79, 0, 0.8);
+    }
+    
+    100% {
+        box-shadow: 0px 0px 20px rgb(248, 79, 0);
+    }
+}
+
+/* tablet view */
+@media (max-width: 1000px) {
+    form {
+        padding: 20px 0;
+        margin-top: 15px;
+    }
+
+    .delete-btn {
+        width: 20px;
+        height: 20px;
+    }
+
+    button {
+        padding: 5px 15px;
+    }
+
+    .work {
+        margin-bottom: 0;
+    }
+}
+
+/* mobile view */
+@media (max-width: 600px) {
+    form {
+        padding: 15px 0;
+        margin: 10px;
+    }
+
+    .delete-btn {
+        width: 20px;
+        height: 20px;
+    }
+
+    .checkbox-container {
+        gap: 5px;
+    }
+
+    button {
+        padding: 5px 15px;
+    }
+
+    .work {
+        margin-bottom: 0;
+    }
+}

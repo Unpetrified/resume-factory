@@ -1,5 +1,6 @@
 import React from "react";
 import Input, { Checkbox } from "./form elements";
+import deleteIcon from "../../assets/delete.svg";
 
 export default function Education({resume, setResume}) {
 
@@ -45,8 +46,8 @@ export default function Education({resume, setResume}) {
             <legend>Education*</legend>
             {resume["Education"].map((school, index) => {
 
-            return <section key={school["key"]}>
-                <button onClick={(e) => removeSchool(e, index)}>Delete School</button>
+            return <section className="school" key={school["key"]}>
+                    <button className="delete-btn" onClick={(e) => removeSchool(e, index)}><img src={deleteIcon} alt="delete button"/></button>
                     <Input label="School Name" id={index+"name"} value={school["name"]} handleChange={(e) => update(e, "name", index)}/>
                     <Input label="Degree Obtained" id={index+"deg"} value={school["degree"]} handleChange={(e) => update(e, "degree", index)}/>
                     <Input label="Start Date" id={index+"start"} value={school["start"]} handleChange={(e) => update(e, "start", index)} type="date"/>

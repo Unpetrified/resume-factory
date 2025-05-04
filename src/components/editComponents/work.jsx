@@ -1,5 +1,6 @@
 import React from "react";
 import Input, { Checkbox, TextArea } from "./form elements";
+import deleteIcon from "../../assets/delete.svg";
 
 export default function Work({resume, setResume}) {
 
@@ -7,14 +8,13 @@ export default function Work({resume, setResume}) {
         e.preventDefault()
         
         const newResume = {...resume},
-            today = new Date().toISOString().split("T")[0],
 
             newWork = {
                 "name":"", 
                 "position":"", 
                 "start":"", 
                 "isCurrent":true, 
-                "end":today,
+                "end":"Present",
                 "experience":[],
                 "key":crypto.randomUUID()
             };
@@ -73,8 +73,8 @@ export default function Work({resume, setResume}) {
             <legend>Work Experience*</legend>
             {resume["Work"].map((job, index) => {
 
-            return <section key={job["key"]}>
-                <button onClick={(e) => removeWork(e, index)}>Delete Job</button>
+            return <section className="work" key={job["key"]}>
+                    <button className="delete-btn" onClick={(e) => removeWork(e, index)}><img src={deleteIcon} alt="delete button"/></button>
                     <Input label="Company Name" id={index+"name"} value={job["name"]} handleChange={(e) => update(e, "name", index)}/>
                     <Input label="Role" id={index+"role"} value={job["position"]} handleChange={(e) => update(e, "position", index)}/>
                     <Input label="Start Date" id={index+"start"} value={job["start"]} handleChange={(e) => update(e, "start", index)} type="date"/>
@@ -84,11 +84,11 @@ export default function Work({resume, setResume}) {
                         {job["experience"].map((responsibility, r_index) => {
                             return <li key={responsibility["key"]}>
                                 <TextArea key={responsibility["key"]} label={"Responsibility "+Number.parseInt(r_index+1)} id={responsibility["key"]} value={responsibility["value"]} handleChange={(e) => update(e, "experience", index, r_index)}/>
-                                <button onClick={(e) => removeResponsibility(e, index, r_index)}>Delete Responsibility</button>
+                                <button className="delete-btn" onClick={(e) => removeResponsibility(e, index, r_index)}><img src={deleteIcon} alt="delete button"/></button>
                             </li>
                             
                         })}
-                        <button onClick={(e) => addResponsibility(e, index)}>Add Responsibility</button>
+                        <button className="responsibility" onClick={(e) => addResponsibility(e, index)}>Add Responsibility</button>
                     </ul>
                 </section>
             })}            
