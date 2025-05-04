@@ -20,3 +20,33 @@ footer {
     background-color: rgb(43, 43, 43);
     color: white;
 }
+
+@media print {
+    header {
+        display: none !important;
+    }
+
+    .work h3 ,
+    .education h3 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .work-hr,
+    .edu-hr,
+    .name-hr {
+        display: block !important;
+        border: 1px solid black;
+        background-color: black;
+        color: black;
+        height: 0.5px;
+    }
+
+    button {
+        display: none !important;
+    }
+
+    footer {
+        display: none !important;
+    }
+}

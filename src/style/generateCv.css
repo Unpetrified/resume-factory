@@ -1,0 +1,127 @@
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 8in;
+    margin: 10px auto;
+    padding: 20px 50px;
+    box-shadow: 0px 0px 8px rgb(196, 196, 196);
+}
+
+.personal-info h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.name-hr {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 5px;
+    column-gap: 20px;
+    padding: 20px 0;
+}
+
+.contact div {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: min-content;
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.education,
+.work {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.education h3,
+.work h3 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.education section,
+.work section {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.edu-hr,
+.work-hr {
+    width: 100%;
+    margin-top: 0;
+}
+
+.school-header,
+.work-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.school-header h4,
+.work-header h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.school-header div,
+.work-header div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 1em;
+}
+
+.school-header h6,
+.work-header h6 {
+    font-size: small;
+}
+
+.work .position {
+    font-weight: bold;
+}
+
+.experiences {
+    list-style-type: none;
+}
+
+.experiences li {
+    --marker: 5px;
+    position: relative;
+    padding-left: calc(4*var(--marker));
+}
+
+.experiences li::before {
+    content: '';
+    position: absolute;
+    left: var(--marker);
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--marker);
+    height: var(--marker);
+    background-color: black;
+    border-radius: 50%;
+}
+
+.edit-btn {
+    width: 400px;
+    margin: 0 auto;
+}

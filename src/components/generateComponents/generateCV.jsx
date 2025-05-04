@@ -11,9 +11,9 @@ export default function Generate({editEventHandler, currentResume}) {
                 <h2>{currentResume["Personal"]["name"]}</h2>
                 <hr className="name-hr"/>
                 <section className="contact">
+                    <div><img src={phoneIcon} className='contact-icon'/><span>{currentResume["Personal"]["telephone"]}</span></div>
                     <div><img src={emailIcon} className='contact-icon'/><span>{currentResume["Personal"]["email"]}</span></div>
                     <div><img src={mapIcon} className='contact-icon'/><span>{currentResume["Personal"]["address"]}</span></div>
-                    <div><img src={phoneIcon} className='contact-icon'/><span>{currentResume["Personal"]["telephone"]}</span></div>
                     <div><img src={jobIcon} className='contact-icon'/><span>{currentResume["Personal"]["role"]}</span></div>
                 </section>
             </section>
@@ -25,7 +25,7 @@ export default function Generate({editEventHandler, currentResume}) {
                         <section key={school["key"]}>
                             <div className="school-header">
                                 <h4 className="school-name">{school["name"]}</h4>
-                                <h6 className="start">{school["start"]}</h6> - <h6 className="end">{school["end"]}</h6>
+                                <div><h6 className="start">{school["start"]}</h6> - <h6 className="end">{school["end"]}</h6></div>
                             </div>
                             <div className="degree">{school["degree"]}</div>
                         </section>
@@ -40,9 +40,9 @@ export default function Generate({editEventHandler, currentResume}) {
                         <section key={work["key"]}>
                             <div className="work-header">
                                 <h4 className="company-name">{work["name"]}</h4>
-                                <h6 className="start">{work["start"]}</h6> - <h6 className="end">{work["end"]}</h6>
+                                <div><h6 className="start">{work["start"]}</h6> - <h6 className="end">{work["end"]}</h6></div>
                             </div>
-                            <div className="position">{work["position"]}</div>
+                            <p className="position">{work["position"]}</p>
                             <ul className="experiences">
                                 {work["experience"].map(exp => {
                                     return (
@@ -56,7 +56,7 @@ export default function Generate({editEventHandler, currentResume}) {
                     )
                 })}
             </section>
-            <button onClick={editEventHandler}>Edit</button>
+            <button className='edit-btn' onClick={editEventHandler}>Edit</button>
         </main>
     )
 }

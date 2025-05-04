@@ -10,7 +10,8 @@ form {
 }
 
 fieldset,
-section {
+.education,
+.work {
     display: flex;
     flex-direction: column;
     gap: 5px;
