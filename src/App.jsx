@@ -10,7 +10,7 @@ export default function App() {
         "Personal" : {"name":"", "email":"", "address":"", "telephone":"", "role":""},
         "Education" : [],
         "Work" : [],
-
+        "Custom" : [],
     });
 
     function handleEditCvBtnClick() {

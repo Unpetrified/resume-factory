@@ -27,3 +27,16 @@ export function TextArea({label, id, value, handleChange, class_name=""}) {
         </>
     )
 }
+
+export function Select({id, value, handleChange, class_name=""}) {
+
+    return (
+        <>
+        <label htmlFor={id}>What type of field is this? (List for fields like skills, certifications etc. Dated for fields like Volunteering experiences.)</label>
+        <select className={class_name} id={id} value={value} onChange={handleChange}>
+            <option value="list">List</option>
+            <option value="dated">Dated</option>
+        </select>
+        </>
+    )
+}
