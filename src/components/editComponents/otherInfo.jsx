@@ -1,6 +1,7 @@
 import DatedField from "./dated";
 import ListField from "./list";
 import Input, { Select } from "./form elements";
+import deleteIcon from "../../assets/delete.svg";
 
 export default function Custom({resume, setResume}) {
     function addCustom(e, resume, setResume) {
@@ -20,6 +21,15 @@ export default function Custom({resume, setResume}) {
         setResume(newResume);
     }
 
+    function removeCustom(e, index) {
+        e.preventDefault()
+        
+        const newResume = {...resume};
+        newResume["Custom"].splice(index, 1);
+
+        setResume(newResume);
+    }
+
     function update(e, element, index, r_index=0) {
         const newResume = {...resume};
         
@@ -32,13 +42,14 @@ export default function Custom({resume, setResume}) {
     }
 
     return (
-        <fieldset>
+        <fieldset className="custom-fields">
             <legend>Custom Fields</legend>
             {resume["Custom"].map((custom_field, index) => {
                 return (
                     <section key={custom_field["key"]}>
-                        <Input label="Field Name" id={custom_field["key"]+"name"} value={custom_field["name"]} handleChange={(e) => update(e, "name", index)}/>
-                        <Select id={custom_field["key"]+"selection"} value={custom_field["type"]} handleChange={(e) => update(e, "type", index)}/>
+                        <button className="delete-btn" onClick={(e) => removeCustom(e, index)}><img src={deleteIcon} alt="delete button"/></button>
+                        <Input label="Field Name" id={custom_field["key"]+"name"} value={custom_field["name"]} handleChange={(e) => update(e, "name", index)} class_name="field-name"/>
+                        <Select id={custom_field["key"]+"selection"} value={custom_field["type"]} handleChange={(e) => update(e, "type", index)} class_name="select"/>
                         {custom_field["type"] === "list" ? <ListField currentResume={resume} updateResume={setResume} i={index} updateFn={update}/> : <DatedField currentResume={resume} updateResume={setResume} i={index}/>}
                     </section>
                 )

@@ -102,6 +102,48 @@ button,
     padding: 5px 15px;
 }
 
+.custom-fields section {
+    position: relative;
+}
+
+.custom-fields li .delete-btn,
+.custom-fields .dated-fields-exp .delete-btn {
+    top: 34px;
+}
+
+.dated-field {
+    padding: 0;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.dated-field ul {
+    margin-bottom: 0;
+}
+
+.dated-field legend,
+.list-field-legend {
+    margin: 18px 0;
+    width: 100%;
+}
+
+.dated-fields .delete-btn,
+.custom-fields .delete-btn {
+    top: -5px;
+}
+
+.field-name {
+    margin-bottom: 5px;
+}
+
+.select {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-left: 10px;
+    padding: 2px 8px;
+}
+
 .generate {
     padding: 15px 50px;
     width: fit-content;
@@ -114,7 +156,7 @@ button,
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-fill-mode: forwards;  /* <-- pick whichever makes sense */
-  }
+}
   
 
 @keyframes generatePulse {

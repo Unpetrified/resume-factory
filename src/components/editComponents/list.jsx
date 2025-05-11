@@ -29,7 +29,7 @@ export default function ListField({currentResume, updateResume, i, updateFn}) {
 
     return (
     <>
-        <h3>{currentResume["Custom"][i]["name"]}</h3>
+        <h3 className="list-field-legend">{currentResume["Custom"][i]["name"]}</h3>
         <ul>
             {currentResume["Custom"][i]["list"].map((responsibility, r_index) => {
                 return <li key={responsibility["key"]}>
@@ -38,7 +38,7 @@ export default function ListField({currentResume, updateResume, i, updateFn}) {
                 </li>
                 
             })}
-            <button className="responsibility" onClick={addResponsibility}>Add Responsibility</button>
+            <button className="responsibility" onClick={addResponsibility}>Add {currentResume["Custom"][i]["name"]}</button>
         </ul>
     </>)
 }
