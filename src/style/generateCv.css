@@ -10,12 +10,16 @@ main {
 .personal-info h2 {
     text-align: center;
     text-transform: uppercase;
+    margin-bottom: 2px;
 }
 
-.name-hr {
-    max-width: 80%;
+.div-name-hr {
+    width: 80%;
+    height: 2px;
     margin: 0 auto;
+    background-color: black;
 }
+
 
 .contact {
     display: flex;
@@ -62,10 +66,11 @@ main {
     width: 100%;
 }
 
-.edu-hr,
-.work-hr {
+.div-hr {
+    height: 2px;
+    background-color: black;
     width: 100%;
-    margin-top: 0;
+    margin: 0;
 }
 
 .school-header,
@@ -124,4 +129,49 @@ main {
 .edit-btn {
     width: 400px;
     margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+    .edit-btn {
+        padding: 10px 0px;
+        margin: 0 auto;
+    }
+}
+
+/* mobile view */
+@media (max-width: 600px) {
+    h1 {
+        font-size: large;
+    }
+    h2 {
+        font-size: medium;
+    }
+    h3 {
+        font-size: small;
+    }
+    .work-header h6,
+    .school-header h6 {
+        font-size: xx-small;
+    }
+    .div-name-hr {
+        width: 100%;
+    }
+    body {
+        font-size: x-small;
+    }
+    .edit-btn {
+        max-width: 100%;
+    }
+    .contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 2px;
+        column-gap: 3px;
+        padding: 20px 0;
+    }
+    main {
+        padding: 20px 30px;
+    }
 }
