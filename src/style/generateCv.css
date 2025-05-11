@@ -126,6 +126,18 @@ main {
     border-radius: 50%;
 }
 
+.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.download-btn button {
+    padding: 8px 20px;
+}
+
 .edit-btn {
     width: 400px;
     margin: 0 auto;
@@ -173,5 +185,8 @@ main {
     }
     main {
         padding: 20px 30px;
+    }
+    button {
+        font-size: small;
     }
 }

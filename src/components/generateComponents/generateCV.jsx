@@ -3,6 +3,7 @@ import mapIcon from '../../assets/map-marker.svg';
 import phoneIcon from '../../assets/phone.svg';
 import jobIcon from '../../assets/briefcase-variant-outline.svg';
 import "../../style/generateCv.css"
+import Buttons from './save';
 
 export default function Generate({editEventHandler, currentResume}) {
     return (
@@ -99,6 +100,7 @@ export default function Generate({editEventHandler, currentResume}) {
                     </section>
                 )
             })}
+            <Buttons/>
             <button className='edit-btn' onClick={editEventHandler}>Edit</button>
         </main>
     )

@@ -96,6 +96,12 @@ button,
     border-radius: 50px;
 }
 
+button:hover,
+.generate:hover {
+    background-color: rgb(199, 63, 0);
+    scale: 0.96;
+}
+
 .responsibility {
     font-size: medium;
     font-weight: 400;

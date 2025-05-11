@@ -13,7 +13,7 @@ export default function EditCV({generateEventHandler, currentResume, updateResum
             <Education resume={currentResume} setResume={updateResume} />
             <Work resume={currentResume} setResume={updateResume} />
             <Custom resume={currentResume} setResume={updateResume}/>
-            <input className="generate" type="submit" value="Generate" onClick={generateEventHandler}/>
+            <input className="generate" type="submit" value="Preview" onClick={generateEventHandler}/>
         </form>
         </>
     )
